@@ -99,6 +99,9 @@ public final class OpenWireFormat implements WireFormat {
         if (object == null) {
             return false;
         }
+        if (!(object instanceof OpenWireFormat)){
+            return false;
+        }
         OpenWireFormat o = (OpenWireFormat)object;
         return o.stackTraceEnabled == stackTraceEnabled && o.cacheEnabled == cacheEnabled
                && o.version == version && o.tightEncodingEnabled == tightEncodingEnabled
